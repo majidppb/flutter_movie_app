@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:movie_app/infrastructure/shared_prefs.dart';
+import 'package:movie_app/infrastructure/core/shared_prefs.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

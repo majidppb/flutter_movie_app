@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movie_app/domain/core/functions/custom_serialization.dart';
+import 'package:movie_app/infrastructure/core/custom_serialization/int_list.dart';
+
+import '../../../../infrastructure/core/custom_serialization/bool.dart';
 
 part 'movie.g.dart';
 

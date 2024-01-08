@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/settings/settings_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
 import 'package:movie_app/presentation/edit_profile/edit_profile_bottom_sheet.dart';
 import 'package:movie_app/presentation/settings/widgets/confirm_logout.dart';
-import 'package:movie_app/presentation/widgets/grey_outlined_button.dart';
+import 'package:movie_app/presentation/core/widgets/grey_outlined_button.dart';
+
+import '../../application/edit_profile/profile_edit_mode.dart';
 
 class ScreenSettings extends StatelessWidget {
   const ScreenSettings({super.key});

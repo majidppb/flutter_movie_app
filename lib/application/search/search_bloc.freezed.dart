@@ -101,7 +101,7 @@ class _$InitializeImpl implements _Initialize {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$InitializeImpl);
   }
@@ -228,7 +228,7 @@ class _$SearchMovieImpl implements _SearchMovie {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SearchMovieImpl &&
@@ -509,7 +509,7 @@ class _$SearchStateImpl implements _SearchState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SearchStateImpl &&

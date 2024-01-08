@@ -101,7 +101,7 @@ class _$GetDownloadsImagesImpl implements _GetDownloadsImages {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$GetDownloadsImagesImpl);
   }
@@ -203,7 +203,7 @@ class _$GetMyListImpl implements _GetMyList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$GetMyListImpl);
   }
@@ -431,7 +431,7 @@ class _$DownloadsStateImpl implements _DownloadsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DownloadsStateImpl &&

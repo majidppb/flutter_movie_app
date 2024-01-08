@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
-import 'package:movie_app/domain/core/di/injectable.dart';
+import 'package:movie_app/core/di/injectable.dart';
 import 'package:movie_app/domain/who_is_watching/models/profile/profile.dart';
 import 'package:movie_app/domain/who_is_watching/profile_service.dart';
-import 'package:movie_app/infrastructure/shared_prefs.dart';
-import 'package:movie_app/infrastructure/sqflite.dart';
+import 'package:movie_app/infrastructure/core/shared_prefs.dart';
+import 'package:movie_app/infrastructure/core/sqflite.dart';
 
 @LazySingleton(as: ProfileService)
 class ProfileImpl implements ProfileService {

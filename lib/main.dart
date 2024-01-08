@@ -7,19 +7,19 @@ import 'package:movie_app/application/library/library_bloc.dart';
 import 'package:movie_app/application/new_and_hot/new_and_hot_bloc.dart';
 import 'package:movie_app/application/search/search_bloc.dart';
 import 'package:movie_app/application/settings/settings_bloc.dart';
-import 'package:movie_app/core/colors.dart';
+import 'package:movie_app/domain/library/my_list/my_list_reposiory.dart';
+import 'package:movie_app/presentation/core/colors.dart';
 import 'package:movie_app/core/theme.dart';
-import 'package:movie_app/domain/core/di/injectable.dart';
-import 'package:movie_app/infrastructure/sqflite.dart';
-import 'package:movie_app/domain/library/my_list/my_list_service.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router.dart';
+import 'package:movie_app/core/di/injectable.dart';
+import 'package:movie_app/infrastructure/core/sqflite.dart';
+
+import 'core/routes/router.dart';
 
 // movieapp.com/
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection();
   await DB.init();
-  MyAppRouter();
   runApp(const MyApp());
 }
 
@@ -28,11 +28,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Precache the images for faster loading
     _preCacheImages(context);
 
     return RepositoryProvider(
-      // For add, delete and check items in My List
       create: (context) => getIt<MyListRepository>(),
       child: MultiBlocProvider(
         providers: [
@@ -59,9 +57,10 @@ class MyApp extends StatelessWidget {
           title: 'Movie App',
           restorationScopeId: 'root',
           debugShowCheckedModeBanner: false,
-          routerConfig: MyAppRouter.router,
+          routerConfig: router,
           themeMode: ThemeMode.dark,
           darkTheme: ThemeData(
+            useMaterial3: false,
             appBarTheme: appBarTheme,
             inputDecorationTheme: inputDecorationTheme,
             textTheme: textTheme,
@@ -73,6 +72,7 @@ class MyApp extends StatelessWidget {
     );
   }
 
+  /// Precache the images for faster loading
   Future<void> _preCacheImages(BuildContext context) async {
     precacheImage(const AssetImage('assets/banner.png'), context);
     precacheImage(const AssetImage('assets/logo.png'), context);

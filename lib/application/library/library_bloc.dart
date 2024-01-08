@@ -3,7 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:movie_app/domain/library/downloads/downloads_service.dart';
 import 'package:movie_app/domain/library/downloads/models/downloads_image/downloads_image.dart';
-import 'package:movie_app/domain/library/my_list/my_list_service.dart';
+
+import '../../domain/library/my_list/my_list_service.dart';
 
 part 'library_event.dart';
 part 'library_state.dart';

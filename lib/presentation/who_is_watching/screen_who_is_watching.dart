@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/who_is_watching/who_is_watching_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/domain/core/di/injectable.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router_constatnts.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/core/di/injectable.dart';
+import 'package:movie_app/core/routes/routes.dart';
 import 'package:movie_app/domain/who_is_watching/models/profile/profile.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router.dart';
+import 'package:movie_app/core/routes/router.dart';
 import 'package:movie_app/presentation/edit_profile/edit_profile_bottom_sheet.dart';
-import 'package:movie_app/presentation/widgets/grey_outlined_button.dart';
-import 'package:movie_app/presentation/widgets/heading_widget.dart';
-import 'package:movie_app/presentation/widgets/logo_screen_container.dart';
+import 'package:movie_app/presentation/core/widgets/grey_outlined_button.dart';
+import 'package:movie_app/presentation/core/widgets/heading_widget.dart';
+import 'package:movie_app/presentation/core/widgets/logo_screen_container.dart';
+
+import '../../application/edit_profile/profile_edit_mode.dart';
 
 // Bloc Provider
 class ScreenWhoIsWatching extends StatelessWidget {
@@ -79,7 +81,7 @@ class _ScreenWhoIsWatching extends StatelessWidget {
               BlocProvider.of<WhoIsWatchingBloc>(context)
                   .add(WhoIsWatchingEvent.setProfile(profile));
               // Go to Home
-              MyAppRouter.router.go(MyAppRouterConstatnts.homePath);
+              router.go(Routes.homePath);
             },
             // Tile widget
             child: Column(

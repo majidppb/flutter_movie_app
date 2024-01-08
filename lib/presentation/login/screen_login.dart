@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/login/login_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router_constatnts.dart';
-import 'package:movie_app/presentation/widgets/custom_text_form_field.dart';
-import 'package:movie_app/presentation/widgets/heading_widget.dart';
-import 'package:movie_app/presentation/widgets/logo_screen_container.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
+import 'package:movie_app/core/routes/router.dart';
+import 'package:movie_app/core/routes/routes.dart';
+import 'package:movie_app/presentation/core/widgets/custom_text_form_field.dart';
+import 'package:movie_app/presentation/core/widgets/heading_widget.dart';
+import 'package:movie_app/presentation/core/widgets/logo_screen_container.dart';
 
-import '../../domain/core/di/injectable.dart';
+import '../../core/di/injectable.dart';
 
 // Bloc Provider
 class ScreenLogin extends StatelessWidget {
@@ -96,8 +96,7 @@ class _ScreenLogin extends StatelessWidget {
 
   void _gotoWhosWatching(BuildContext _, LoginState state) {
     if (state.isLoggedIn) {
-      MyAppRouter.router
-          .pushReplacement(MyAppRouterConstatnts.whoIsWatchingPath);
+      router.pushReplacement(Routes.whoIsWatchingPath);
     }
   }
 

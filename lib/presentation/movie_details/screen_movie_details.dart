@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/movie_details/movie_details_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
-import 'package:movie_app/core/language_map.dart';
-import 'package:movie_app/domain/core/di/injectable.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
+import 'package:movie_app/presentation/core/language_map.dart';
+import 'package:movie_app/core/di/injectable.dart';
 import 'package:movie_app/domain/movie_details/models/movie/movie.dart';
 import 'package:movie_app/presentation/movie_details/genre.dart';
-import 'package:movie_app/presentation/widgets/custom_error.dart';
-import 'package:movie_app/presentation/widgets/heading_widget.dart';
-import 'package:movie_app/presentation/widgets/loading_indicator.dart';
-import 'package:movie_app/presentation/widgets/watch.dart';
+import 'package:movie_app/presentation/core/widgets/custom_error.dart';
+import 'package:movie_app/presentation/core/widgets/heading_widget.dart';
+import 'package:movie_app/presentation/core/widgets/loading_indicator.dart';
+import 'package:movie_app/presentation/core/widgets/watch.dart';
 
 // Bloc Provider
 class ScreenMovieDetails extends StatelessWidget {

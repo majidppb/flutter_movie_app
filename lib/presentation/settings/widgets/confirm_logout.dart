@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/settings/settings_bloc.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router_constatnts.dart';
+import 'package:movie_app/core/routes/router.dart';
+import 'package:movie_app/core/routes/routes.dart';
 
 class ConfirmLogOutAlert extends StatelessWidget {
   const ConfirmLogOutAlert({super.key});
@@ -16,7 +16,7 @@ class ConfirmLogOutAlert extends StatelessWidget {
         TextButton(
           child: const Text('Cancel'),
           onPressed: () {
-            MyAppRouter.router.pop();
+            router.pop();
           },
         ),
         TextButton(
@@ -24,7 +24,7 @@ class ConfirmLogOutAlert extends StatelessWidget {
             onPressed: () {
               BlocProvider.of<SettingsBloc>(context)
                   .add(const SettingsEvent.logOut());
-              MyAppRouter.router.go(MyAppRouterConstatnts.logInPath);
+              router.go(Routes.logInPath);
             })
       ],
     );

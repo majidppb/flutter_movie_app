@@ -109,7 +109,7 @@ class _$GetComingSoonImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$GetComingSoonImpl);
   }
@@ -220,7 +220,7 @@ class _$GetEveryonesWatchingImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetEveryonesWatchingImpl);
@@ -499,7 +499,7 @@ class _$NewAndHotStateImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NewAndHotStateImpl &&

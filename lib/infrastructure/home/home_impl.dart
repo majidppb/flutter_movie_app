@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
-import 'package:movie_app/domain/core/api_end_points.dart';
-import 'package:movie_app/domain/core/di/injectable.dart';
+import 'package:movie_app/infrastructure/core/api_end_points.dart';
+import 'package:movie_app/core/di/injectable.dart';
 import 'package:movie_app/domain/core/failures/main_failure.dart';
 import 'package:movie_app/domain/home/home_service.dart';
 import 'package:movie_app/domain/movie_details/models/movie/movie.dart';
-import 'package:movie_app/infrastructure/dio_provider.dart';
-import 'package:movie_app/infrastructure/shared_prefs.dart';
+import 'package:movie_app/infrastructure/core/dio_provider.dart';
+import 'package:movie_app/infrastructure/core/shared_prefs.dart';
 
 @LazySingleton(as: HomeService)
 class HomeImpl implements HomeService {

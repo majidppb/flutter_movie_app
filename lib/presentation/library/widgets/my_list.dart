@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:movie_app/application/library/library_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
-import 'package:movie_app/core/language_map.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router_constatnts.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
+import 'package:movie_app/presentation/core/language_map.dart';
+import 'package:movie_app/core/routes/router.dart';
+import 'package:movie_app/core/routes/routes.dart';
 import 'package:movie_app/domain/movie_details/models/movie/movie.dart';
 import 'package:movie_app/presentation/library/widgets/movie_poster.dart';
 
@@ -49,8 +49,7 @@ class MyListWidget extends StatelessWidget {
 
               // Show Movie Details on tap
               onTap: () {
-                MyAppRouter.router.push(
-                    '${MyAppRouterConstatnts.movieDetailsPath}${movie.id}',
+                router.push('${Routes.movieDetailsPath}${movie.id}',
                     extra: movie);
               },
             );

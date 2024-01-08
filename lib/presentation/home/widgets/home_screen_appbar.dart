@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/presentation/widgets/app_bar_actions.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/widgets/app_bar_actions.dart';
 
 const double _iconSize = 50;
 

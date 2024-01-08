@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/home/home_bloc.dart';
-import 'package:movie_app/core/constants.dart';
-import 'package:movie_app/presentation/widgets/custom_error.dart';
-import 'package:movie_app/presentation/widgets/heading_widget.dart';
-import 'package:movie_app/presentation/widgets/loading_indicator.dart';
-import 'package:movie_app/presentation/widgets/vertical_movie_tile.dart';
+import 'package:movie_app/presentation/core/styles.dart';
+import 'package:movie_app/presentation/core/widgets/custom_error.dart';
+import 'package:movie_app/presentation/core/widgets/heading_widget.dart';
+import 'package:movie_app/presentation/core/widgets/loading_indicator.dart';
+import 'package:movie_app/presentation/core/widgets/vertical_movie_tile.dart';
 
 class TopRatedMovieListWidget extends StatelessWidget {
   const TopRatedMovieListWidget({super.key});

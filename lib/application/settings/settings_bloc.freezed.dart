@@ -107,7 +107,7 @@ class _$GetSettingsImpl implements _GetSettings {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$GetSettingsImpl);
   }
@@ -233,7 +233,7 @@ class _$SaveSettingsImpl implements _SaveSettings {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SaveSettingsImpl &&
@@ -356,7 +356,7 @@ class _$LogOutImpl implements _LogOut {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$LogOutImpl);
   }
@@ -540,7 +540,7 @@ class _$SettingsStateImpl implements _SettingsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SettingsStateImpl &&

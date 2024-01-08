@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:movie_app/domain/core/api_end_points.dart';
+import 'package:movie_app/infrastructure/core/api_end_points.dart';
 import 'package:movie_app/domain/core/failures/main_failure.dart';
 import 'package:movie_app/domain/library/downloads/downloads_service.dart';
 import 'package:movie_app/domain/library/downloads/models/downloads_image/downloads_image.dart';
-import 'package:movie_app/infrastructure/dio_provider.dart';
+import 'package:movie_app/infrastructure/core/dio_provider.dart';
 
 @LazySingleton(as: DownloadsService)
 class DownloadsImpl implements DownloadsService {

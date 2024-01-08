@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/domain/fast_laughs/models/fast_laughs_video/fast_laughs_video.dart';
-import 'package:movie_app/presentation/widgets/loading_indicator.dart';
-import 'package:movie_app/presentation/widgets/video_action.dart';
+import 'package:movie_app/presentation/core/widgets/loading_indicator.dart';
+import 'package:movie_app/presentation/core/widgets/video_action.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../navbar/screen_navbar.dart';
+import '../../core/navbar/screen_navbar.dart';
 
 double _volume = 0;
 

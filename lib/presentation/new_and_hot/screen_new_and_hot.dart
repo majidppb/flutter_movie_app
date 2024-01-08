@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/new_and_hot/new_and_hot_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
 import 'package:movie_app/presentation/new_and_hot/widgets/coming_soon.dart';
 import 'package:movie_app/presentation/new_and_hot/widgets/everyones_watching.dart';
-import 'package:movie_app/presentation/widgets/app_bar_actions.dart';
+import 'package:movie_app/presentation/core/widgets/app_bar_actions.dart';
 
 class ScreenNewAndHot extends StatelessWidget {
   const ScreenNewAndHot({super.key});

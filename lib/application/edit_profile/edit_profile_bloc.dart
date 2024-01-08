@@ -2,10 +2,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:movie_app/domain/who_is_watching/profile_service.dart';
-import 'package:movie_app/infrastructure/shared_prefs.dart';
-import 'package:movie_app/presentation/edit_profile/edit_profile_bottom_sheet.dart';
+import 'package:movie_app/infrastructure/core/shared_prefs.dart';
 
 import '../../domain/who_is_watching/models/profile/profile.dart';
+import 'profile_edit_mode.dart';
 
 part 'edit_profile_event.dart';
 part 'edit_profile_state.dart';

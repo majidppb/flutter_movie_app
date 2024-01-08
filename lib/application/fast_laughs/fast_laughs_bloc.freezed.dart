@@ -135,7 +135,7 @@ class _$GetVideosImpl implements _GetVideos {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetVideosImpl &&
@@ -344,7 +344,7 @@ class _$FastLaughsImpl implements _FastLaughs {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FastLaughsImpl &&

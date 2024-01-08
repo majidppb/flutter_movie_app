@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:movie_app/application/library/library_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
-import 'package:movie_app/domain/core/functions/image_path.dart';
-import 'package:movie_app/presentation/widgets/custom_error.dart';
-import 'package:movie_app/presentation/widgets/loading_indicator.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
+import 'package:movie_app/presentation/core/image_path.dart';
+import 'package:movie_app/presentation/core/widgets/custom_error.dart';
+import 'package:movie_app/presentation/core/widgets/loading_indicator.dart';
 
 // Downloads Widget as list of items
 class DownloadsWidget extends StatelessWidget {

@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:movie_app/application/search/search_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
-import 'package:movie_app/domain/core/functions/image_path.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router_constatnts.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
+import 'package:movie_app/presentation/core/image_path.dart';
+import 'package:movie_app/core/routes/router.dart';
+import 'package:movie_app/core/routes/routes.dart';
 import 'package:movie_app/domain/movie_details/models/movie/movie.dart';
-import 'package:movie_app/presentation/widgets/custom_error.dart';
-import 'package:movie_app/presentation/widgets/heading_widget.dart';
-import 'package:movie_app/presentation/widgets/loading_indicator.dart';
+import 'package:movie_app/presentation/core/widgets/custom_error.dart';
+import 'package:movie_app/presentation/core/widgets/heading_widget.dart';
+import 'package:movie_app/presentation/core/widgets/loading_indicator.dart';
 
 class ScreenSearch extends StatelessWidget {
   const ScreenSearch({super.key});
@@ -42,8 +42,7 @@ class ScreenSearch extends StatelessWidget {
                 onSubmitted: (searchQuery) {
                   if (searchQuery.isNotEmpty) {
                     // Goto results screen
-                    MyAppRouter.router.push(
-                        '${MyAppRouterConstatnts.searchPath}/$searchQuery');
+                    router.push('${Routes.searchPath}/$searchQuery');
                   }
                 },
               ),
@@ -105,9 +104,7 @@ class _TopSearchItemTile extends StatelessWidget {
     return GestureDetector(
       // Goto Movie Details Screen
       onTap: () {
-        MyAppRouter.router.push(
-            '${MyAppRouterConstatnts.movieDetailsPath}${_movie.id}',
-            extra: _movie);
+        router.push('${Routes.movieDetailsPath}${_movie.id}', extra: _movie);
       },
       child: Row(
         children: [

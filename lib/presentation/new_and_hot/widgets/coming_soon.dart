@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:movie_app/application/new_and_hot/new_and_hot_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
 import 'package:movie_app/domain/movie_details/models/movie/movie.dart';
-import 'package:movie_app/presentation/widgets/video.dart';
-import 'package:movie_app/presentation/widgets/heading_widget.dart';
-import 'package:movie_app/presentation/widgets/video_action.dart';
+import 'package:movie_app/presentation/core/widgets/video.dart';
+import 'package:movie_app/presentation/core/widgets/heading_widget.dart';
+import 'package:movie_app/presentation/core/widgets/video_action.dart';
 
 class ComingSoonWidget extends StatelessWidget {
   const ComingSoonWidget({super.key});

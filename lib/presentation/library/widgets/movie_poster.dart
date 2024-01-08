@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:movie_app/domain/core/functions/image_path.dart';
-import 'package:movie_app/presentation/widgets/loading_indicator.dart';
-import 'package:movie_app/presentation/widgets/vertical_movie_tile.dart';
+import 'package:movie_app/presentation/core/image_path.dart';
+import 'package:movie_app/presentation/core/widgets/loading_indicator.dart';
+import 'package:movie_app/presentation/core/widgets/vertical_movie_tile.dart';
 
 // For MyList
 class VerticalMoviePoster extends StatelessWidget {

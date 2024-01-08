@@ -5,7 +5,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:movie_app/application/fast_laughs/fast_laughs_bloc.dart';
 import 'package:movie_app/domain/fast_laughs/models/fast_laughs_video/fast_laughs_video.dart';
 import 'package:movie_app/presentation/fast_laugh/widgets/video_list_item.dart';
-import 'package:movie_app/presentation/navbar/screen_navbar.dart';
+import 'package:movie_app/presentation/core/navbar/screen_navbar.dart';
 
 class ScreenFastLaugh extends StatefulWidget {
   const ScreenFastLaugh({super.key});

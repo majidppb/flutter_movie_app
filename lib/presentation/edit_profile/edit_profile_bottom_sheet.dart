@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/edit_profile/edit_profile_bloc.dart';
-import 'package:movie_app/core/constants.dart';
-import 'package:movie_app/domain/core/my_app_router/my_app_router.dart';
-import 'package:movie_app/presentation/widgets/custom_text_form_field.dart';
-import 'package:movie_app/presentation/widgets/grey_outlined_button.dart';
+import 'package:movie_app/presentation/core/styles.dart';
+import 'package:movie_app/core/routes/router.dart';
+import 'package:movie_app/presentation/core/widgets/custom_text_form_field.dart';
+import 'package:movie_app/presentation/core/widgets/grey_outlined_button.dart';
 
-import '../../domain/core/di/injectable.dart';
-
-// Modes: Either create new or edit an already existing one
-enum ProfileEditMode { add, edit }
+import '../../application/edit_profile/profile_edit_mode.dart';
+import '../../core/di/injectable.dart';
 
 // For Providing Bloc
 class EditProfileBottomSheet extends StatelessWidget {
@@ -72,7 +70,7 @@ class _EditProfile extends StatelessWidget {
     if (_frmKey.currentState!.validate()) {
       BlocProvider.of<EditProfileBloc>(context)
           .add(EditProfileEvent.save(_mode, _name.text));
-      MyAppRouter.router.pop(true);
+      router.pop(true);
     }
   }
 }

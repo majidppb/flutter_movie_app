@@ -10,29 +10,19 @@ part 'movie_details_bloc.freezed.dart';
 
 @injectable
 class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
-  final MovieDetailsLocalService _localService;
-  final MovieDetailsRemoteService _remoteService;
-  MovieDetailsBloc(this._localService, this._remoteService)
-      : super(MovieDetailsState.initial()) {
+  final MovieDetailsService _remoteService;
+  MovieDetailsBloc(this._remoteService) : super(MovieDetailsState.initial()) {
     on<_GetMovie>((event, emit) async {
       // Initial State : isLoading = true
 
-      // Check whethe movie was passed
+      // Check whether the movie was passed
       if (event.movie != null) {
         emit(MovieDetailsState(
             isLoading: false, isError: false, movie: event.movie));
         return;
       }
 
-      // Check for movie in local database
-      final localResult = await _localService.getMovie(event.id);
-      if (localResult != null) {
-        emit(MovieDetailsState(
-            isLoading: false, isError: false, movie: localResult));
-        return;
-      }
-
-      // Get Movie from web api
+      // Get the Movie from web api
       final remoteResult = await _remoteService.getMovie(event.id);
 
       remoteResult.fold(

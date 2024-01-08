@@ -1,4 +1,4 @@
-class MyList {
+final class MyList {
   final int profile;
 
   final int movie;

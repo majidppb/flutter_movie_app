@@ -1,10 +1,11 @@
 import 'package:injectable/injectable.dart';
-import 'package:movie_app/domain/core/di/injectable.dart';
-import 'package:movie_app/domain/library/my_list/my_list_service.dart';
+import 'package:movie_app/core/di/injectable.dart';
 import 'package:movie_app/domain/movie_details/models/movie/movie.dart';
-import 'package:movie_app/infrastructure/shared_prefs.dart';
-import 'package:movie_app/infrastructure/sqflite.dart';
+import 'package:movie_app/infrastructure/core/shared_prefs.dart';
+import 'package:movie_app/infrastructure/core/sqflite.dart';
 import 'package:sqflite/sqflite.dart';
+
+import '../../../../domain/library/my_list/my_list_service.dart';
 
 @LazySingleton(as: MyListService)
 class MyListDB extends MyListService {
@@ -30,10 +31,10 @@ class MyListDB extends MyListService {
     final profile = getIt<SharedPrefs>().getCurrentProfile;
 
     // If the movie is not already in movie table, add
-    final movieId = await DB.db.insert(DB.movies, movie.toJson(),
+    await DB.db.insert(DB.movies, movie.toJson(),
         conflictAlgorithm: ConflictAlgorithm.ignore);
 
-    await DB.db.insert(DB.myList, {'profile': profile, 'movie': movieId});
+    await DB.db.insert(DB.myList, {'profile': profile, 'movie': movie.id});
 
     // Notify the change
     super.changeNotifier.notify();
@@ -47,7 +48,7 @@ class MyListDB extends MyListService {
     DB.db.delete(DB.myList,
         where: 'profile=? AND movie=?', whereArgs: [profile, id]);
 
-    //If the movie does not exists in list table, we can safely delete it from movie table
+    // If the movie does not exists in list table, we can safely delete it from movie table
     final result = await DB.db.rawQuery(
         'SELECT NOT EXISTS(SELECT 1 FROM ${DB.myList} WHERE movie=?)', [id]);
 

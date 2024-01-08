@@ -1,10 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:movie_app/domain/library/my_list/my_list_service.dart';
 import 'package:movie_app/domain/who_is_watching/models/profile/profile.dart';
 import 'package:movie_app/domain/who_is_watching/profile_service.dart';
-import 'package:movie_app/infrastructure/shared_prefs.dart';
+import 'package:movie_app/infrastructure/core/shared_prefs.dart';
+
+import '../../domain/library/my_list/my_list_service.dart';
 
 part 'settings_event.dart';
 part 'settings_state.dart';
@@ -36,7 +37,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         await _profileService.updateProfile(profile);
         // Update to Shared Preferences
         await _prefs.setIsExplicitAllowed(event.isExplicitAllowed);
-        // Emit
+
         emit(state.copyWith(isExplicitAllowed: event.isExplicitAllowed));
       },
     );

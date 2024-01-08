@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/constants.dart';
-import 'package:movie_app/core/genre_map.dart';
+import 'package:movie_app/presentation/core/styles.dart';
+import 'package:movie_app/presentation/core/genre_map.dart';
 
 class GenresWidget extends StatelessWidget {
   final List<int> _genreIds;

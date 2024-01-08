@@ -148,7 +148,7 @@ class _$GetMovieImpl implements _GetMovie {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetMovieImpl &&
@@ -351,7 +351,7 @@ class _$MovieDetatilsStateImpl implements _MovieDetatilsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieDetatilsStateImpl &&

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/application/library/library_bloc.dart';
-import 'package:movie_app/core/colors.dart';
-import 'package:movie_app/core/constants.dart';
+import 'package:movie_app/presentation/core/colors.dart';
+import 'package:movie_app/presentation/core/styles.dart';
 import 'package:movie_app/presentation/library/widgets/downloads.dart';
 import 'package:movie_app/presentation/library/widgets/my_list.dart';
-import 'package:movie_app/presentation/widgets/app_bar_actions.dart';
+import 'package:movie_app/presentation/core/widgets/app_bar_actions.dart';
 
 class ScreenLibrary extends StatelessWidget {
   const ScreenLibrary({super.key});
