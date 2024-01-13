@@ -34,7 +34,6 @@ class TopRatedMovieListWidget extends StatelessWidget {
                 }
                 return ListView.separated(
                   padding: kMovieListPadding,
-                  shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (_, index) {
                     final movie = state.releasedInPastYear[index];

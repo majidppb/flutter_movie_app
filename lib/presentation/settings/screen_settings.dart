@@ -39,7 +39,6 @@ class ScreenSettings extends StatelessWidget {
           child: BlocBuilder<SettingsBloc, SettingsState>(
             builder: (context, state) {
               return ListView(
-                shrinkWrap: true,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 50),
@@ -99,8 +98,8 @@ class ScreenSettings extends StatelessWidget {
       builder: (context) {
         return const EditProfileBottomSheet(mode: ProfileEditMode.edit);
       },
-    ).then((isChnaged) {
-      if (isChnaged == true) {
+    ).then((isChanged) {
+      if (isChanged == true) {
         _refresh(context);
       }
     });

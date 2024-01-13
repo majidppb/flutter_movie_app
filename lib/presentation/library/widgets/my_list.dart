@@ -56,7 +56,6 @@ class MyListWidget extends StatelessWidget {
           },
           separatorBuilder: (ctx, index) => kHeight,
           itemCount: state.myList.length,
-          shrinkWrap: true,
         );
       },
     );

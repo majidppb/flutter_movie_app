@@ -34,7 +34,6 @@ class ComingSoonWidget extends StatelessWidget {
             : GridView.count(
                 scrollDirection: Axis.vertical,
                 crossAxisCount: 2,
-                shrinkWrap: true,
                 crossAxisSpacing: 5,
                 childAspectRatio: 1 / 1.35,
                 children: List.generate(state.comingSoon.length, (index) {

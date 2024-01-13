@@ -7,11 +7,8 @@ import 'package:video_player/video_player.dart';
 
 import '../../core/navbar/screen_navbar.dart';
 
-double _volume = 0;
-
-// Video List Item Widget
-class VideoListItemWidget extends StatelessWidget {
-  const VideoListItemWidget({super.key, required FastLaughsVideo video})
+class FastLaughsWidget extends StatelessWidget {
+  const FastLaughsWidget({super.key, required FastLaughsVideo video})
       : _video = video;
   final FastLaughsVideo _video;
 
@@ -19,16 +16,15 @@ class VideoListItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        _VideoPlayer(_video.videoUrl!),
-        _FloatingItems(video: _video),
+        _Video(_video.videoUrl!),
+        _OverTheVideoItems(video: _video),
       ],
     );
   }
 }
 
-// Floating Items over the video
-class _FloatingItems extends StatelessWidget {
-  const _FloatingItems({
+class _OverTheVideoItems extends StatelessWidget {
+  const _OverTheVideoItems({
     required FastLaughsVideo video,
   }) : _video = video;
 
@@ -71,27 +67,29 @@ class _FloatingItems extends StatelessWidget {
   }
 }
 
-// Video Player Widget
-class _VideoPlayer extends StatefulWidget {
+double _volume = 0;
+
+class _Video extends StatefulWidget {
   final String _videoUrl;
 
-  const _VideoPlayer(String videoUrl) : _videoUrl = videoUrl;
+  const _Video(String videoUrl) : _videoUrl = videoUrl;
 
   @override
-  State<_VideoPlayer> createState() => _VideoPlayerState();
+  State<_Video> createState() => _VideoState();
 }
 
-class _VideoPlayerState extends State<_VideoPlayer> {
-  late VideoPlayerController _videoPlayerController;
+class _VideoState extends State<_Video> {
+  late VideoPlayerController _controller;
 
   @override
   void initState() {
-    _videoPlayerController =
-        VideoPlayerController.networkUrl(Uri.parse(widget._videoUrl))
-          ..initialize().then((_) {
-            setState(() {});
-            _videoPlayerController.play();
-          });
+    _controller = VideoPlayerController.networkUrl(Uri.parse(widget._videoUrl))
+      ..initialize().then((_) {
+        setState(() {
+          _controller.setLooping(true);
+          _playVideo();
+        });
+      });
 
     // Controlling the video when screen changes
     navBarIndex.addListener(_onScreenChange);
@@ -101,16 +99,16 @@ class _VideoPlayerState extends State<_VideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    return _videoPlayerController.value.isInitialized
+    return _controller.value.isInitialized
         ? GestureDetector(
             onTap: _toggleVolume,
-            onLongPressDown: _pauseVideo,
+            onLongPressDown: (_) => _pauseVideo(),
             onLongPressCancel: _playVideo,
             onLongPressUp: _playVideo,
             child: Center(
               child: AspectRatio(
-                  aspectRatio: _videoPlayerController.value.aspectRatio,
-                  child: VideoPlayer(_videoPlayerController)),
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: VideoPlayer(_controller)),
             ),
           )
         : const LoadingIndicatorWidget();
@@ -119,32 +117,32 @@ class _VideoPlayerState extends State<_VideoPlayer> {
   @override
   void dispose() {
     navBarIndex.removeListener(_onScreenChange);
-    _videoPlayerController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   void _toggleVolume() {
-    if (_videoPlayerController.value.volume != 0) {
-      _volume = _videoPlayerController.value.volume;
-      _videoPlayerController.setVolume(0);
+    if (_controller.value.volume != 0) {
+      _volume = _controller.value.volume;
+      _controller.setVolume(0);
     } else {
-      _videoPlayerController.setVolume(_volume);
+      _controller.setVolume(_volume);
     }
   }
 
-  void _pauseVideo(_) {
-    _videoPlayerController.pause();
+  void _pauseVideo() {
+    _controller.pause();
   }
 
   void _playVideo() {
-    _videoPlayerController.play();
+    _controller.play();
   }
 
   void _onScreenChange() {
     if (navBarIndex.value == 2) {
       _playVideo();
     } else {
-      _pauseVideo(null);
+      _pauseVideo();
     }
   }
 }

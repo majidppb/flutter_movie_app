@@ -25,9 +25,16 @@ class ScreenLogin extends StatelessWidget {
 }
 
 // Screen Login
-class _ScreenLogin extends StatelessWidget {
+class _ScreenLogin extends StatefulWidget {
+  @override
+  State<_ScreenLogin> createState() => _ScreenLoginState();
+}
+
+class _ScreenLoginState extends State<_ScreenLogin> {
   final _frmKey = GlobalKey<FormState>();
+
   final _email = TextEditingController();
+
   final _passWord = TextEditingController();
 
   @override
@@ -109,5 +116,12 @@ class _ScreenLogin extends StatelessWidget {
         password: password,
       ));
     }
+  }
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _passWord.dispose();
+    super.dispose();
   }
 }

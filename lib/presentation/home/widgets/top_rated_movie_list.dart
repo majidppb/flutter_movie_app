@@ -34,7 +34,6 @@ class TopTenMovieListWidget extends StatelessWidget {
                   return const CustomErrorWidget();
                 }
                 return ListView.separated(
-                  shrinkWrap: true,
                   padding: kMovieListPadding,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (_, index) {

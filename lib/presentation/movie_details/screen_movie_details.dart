@@ -68,7 +68,6 @@ class _ScreenMovieDetails extends StatelessWidget {
             ? Padding(
                 padding: kPadding10,
                 child: ListView(
-                  shrinkWrap: true,
                   children: [
                     Watch(movie: state.movie!),
                     ..._details(state.movie!)
@@ -91,7 +90,7 @@ class _ScreenMovieDetails extends StatelessWidget {
     ));
   }
 
-  //Movie details
+  // Movie details
   List<Widget> _details(Movie movie) {
     return [
       // Movie Title

@@ -22,7 +22,6 @@ class EveryonesWatchingWidget extends StatelessWidget {
           }),
           separatorBuilder: ((context, index) => kHeight55),
           itemCount: state.everyonesWatching.length,
-          shrinkWrap: true,
         );
       },
     );

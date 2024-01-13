@@ -70,7 +70,6 @@ class ScreenSearch extends StatelessWidget {
                         kHeight,
                         Expanded(
                           child: ListView.separated(
-                              //shrinkWrap: true,
                               itemBuilder: (ctx, index) {
                                 final movie = state.idleList[index];
                                 return _TopSearchItemTile(movie: movie);

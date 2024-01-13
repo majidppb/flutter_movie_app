@@ -45,13 +45,13 @@ class _ScreenFastLaughState extends State<ScreenFastLaugh> {
         scrollDirection: Axis.vertical,
         builderDelegate: PagedChildBuilderDelegate(
           itemBuilder: (_, video, __) =>
-              VideoListItemWidget(key: ObjectKey(video), video: video),
+              FastLaughsWidget(key: ObjectKey(video), video: video),
         ),
       ),
     );
   }
 
-  // Screen Orientation Lock
+  /// Screen Orientation Lock
   _onScreenChange() {
     if (navBarIndex.value == 2) {
       SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
